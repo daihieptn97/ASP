@@ -1,0 +1,55 @@
+﻿@model QLBH.Models.HangHoa
+
+@{
+    ViewBag.Title = "chi tiết sản phẩm";
+}
+
+<div class="container-web">
+
+    <div class="alert alert-success text-center">
+        <h4>Chi tiết sản phẩm</h4>
+    </div>
+
+
+    <div class="container-form">
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Tên")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+            <br />
+            <dt>
+                @Html.Label("Ngày hết hạn")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.expired)
+            </dd>
+
+            <br />
+            <dt>
+                @Html.Label("Số lượng tồn")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.total)
+            </dd>
+            <br />
+
+            <dd>
+
+                @Html.ActionLink("Quay lại", "index", null, new { @class = "btn btn-danger" })
+            </dd>
+
+        </dl>
+
+
+
+
+    </div>
+</div>

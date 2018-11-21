@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Sửa";
+}
+@model QLBH.Models.HangHoa
+
+<div class="container-web">
+    <div class="alert alert-success text-center">
+        <h4>Chi tiết sản phẩm</h4>
+    </div>
+    <div class="container-form">
+        @using (Html.BeginForm("edit", "Home", FormMethod.Post))
+        {
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <hr />
+            <dl class="dl-horizontal">
+
+
+                <dd>
+                    @Html.HiddenFor(model => model.id)
+                </dd>
+                <br />
+
+                <dt>
+                    @Html.Label("Tên")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.name)
+                </dd>
+                <br />
+                <dt>
+                    @Html.Label("Ngày hết hạn")
+                </dt>
+
+                <dd>
+                    @Html.TextBox("expired", String.Format("{0:yyyy-MM-dd}", Model.expired.Date))
+
+
+
+                </dd>
+                <br />
+                <dt>
+                    @Html.Label("Số lượng tồn")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.total)
+                </dd>
+                <br />
+                <dd>
+                    <button class="btn btn-success">Xong</button>
+                    @Html.ActionLink("Quay lại", "index", null, new { @class = "btn btn-danger" })
+                </dd>
+            </dl>
+
+        }
+
+
+
+    </div>
+</div>
