@@ -1,0 +1,40 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Trang chủ";
+
+}
+
+
+<div class="alert alert-success text-center">
+    <h4>Trang chủ</h4>
+</div>
+@Html.ActionLink("Thêm hàng mới", "add", "Home", null, new { @class = "btn-link btn " })
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Ngày hết hạn</th>
+            <th>Số lượng tồn</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in ViewBag.data)
+        {
+            <tr>
+                <td>@r.id</td>
+                <td>@r.name</td>
+                <td>@r.expired</td>
+                <td>@r.total</td>
+
+                <td>
+                    @Html.ActionLink("Sửa", "edit", "Home", new { r.id }, null) |
+                    @Html.ActionLink("Xóa", "delete", "Home", new { r.id }, new { onclick = "return confirm('Bạn có muốn xóa không ?')" })|
+                    @Html.ActionLink("Chi tiết", "detail", "Home", new { r.id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

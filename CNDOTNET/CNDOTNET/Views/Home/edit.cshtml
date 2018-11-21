@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "edit";
+}
+@model CNDOTNET.Models.HangHoa
+
+<div class="alert alert-success text-center">
+    <h4>Chi tiết sản phẩm</h4>
+</div>
+
+@*<div class="row>*@
+@using (Html.BeginForm("edit", "Home", FormMethod.Post))
+{
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Mã hàng")
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.id)
+        </dd>
+        <br />
+
+        <dt>
+            @Html.Label("Tên")
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.name)
+        </dd>
+        <br />
+        <dt>
+            @Html.Label("Ngày hết hạn")
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.expired)
+        </dd>
+        <br />
+        <dt>
+            @Html.Label("Tổng tiền")
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.total)
+        </dd>
+        <br />
+        <dd>
+            <input type="submit" />
+        </dd>
+    </dl>
+
+}
+
+
+
+@*</div>*@

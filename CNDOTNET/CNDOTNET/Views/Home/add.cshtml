@@ -1,0 +1,65 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Thêm hàng hóa";
+}
+@model CNDOTNET.Models.HangHoa
+
+<div class="container-web">
+
+    <div class="alert alert-success text-center">
+        <h4>Thêm sản phẩm mới</h4>
+    </div>
+
+    <div class="container-form">
+        @using (Html.BeginForm("add", "Home", FormMethod.Post))
+        {
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.Label("Mã hàng")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.id)
+                </dd>
+                <br />
+
+                <dt>
+                    @Html.Label("Tên")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.name)
+                </dd>
+                <br />
+                <dt>
+                    @Html.Label("Ngày hết hạn")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.expired)
+                </dd>
+                <br />
+                <dt>
+                    @Html.Label("Tổng tiền")
+                </dt>
+
+                <dd>
+                    @Html.TextBoxFor(model => model.total)
+                </dd>
+                <br />
+                <dd>
+                    <input type="submit" value="Thêm sản phẩm mới" class="btn btn-success col-lg-1" />
+                    @Html.ActionLink("Quay lại", "index", null, new { @class = "btn btn-danger" })
+                </dd>
+            </dl>
+
+        }
+
+
+
+    </div>
+</div>
+
