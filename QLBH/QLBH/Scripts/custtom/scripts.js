@@ -1,4 +1,4 @@
-﻿$("#expired").attr("type", "date");
+﻿//$("#expired").attr("type", "date");
 //$("#total").attr("type", "number");
 
 //if ($("#id").val().trim().length <= 0) {

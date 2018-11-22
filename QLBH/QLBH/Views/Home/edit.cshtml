@@ -34,9 +34,7 @@
                 </dt>
 
                 <dd>
-                    @Html.TextBox("expired", String.Format("{0:yyyy-MM-dd}", Model.expired.Date))
-
-
+                    @Html.TextBox("expired", String.Format("{0:yyyy-MM-dd}", Model.expired.Date), new { @Type = "date" })
 
                 </dd>
                 <br />

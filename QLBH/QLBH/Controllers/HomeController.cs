@@ -37,17 +37,18 @@ namespace QLBH.Controllers
         [HttpPost]
         public ActionResult add(HangHoa hang)
         {
-            //  try
-            //  {
-            db.hanghoa.Add(hang);
-            db.SaveChanges();
-            return RedirectToAction("index");
-            //   }
-            //  catch
-            //  {
-            //     return HttpNotFound();
-            //  }
 
+
+            if (ModelState.IsValid == true)
+            {
+                db.hanghoa.Add(hang);
+                db.SaveChanges();
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View(hang);
+            }
 
         }
         [HttpGet]
@@ -58,7 +59,7 @@ namespace QLBH.Controllers
         [HttpPost]
         public ActionResult edit(HangHoa hang)
         {
-            //if (hang.id == null) return RedirectToAction("add");
+
             db.Entry(hang).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("index");
