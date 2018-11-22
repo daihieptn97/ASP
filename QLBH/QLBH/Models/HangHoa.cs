@@ -18,7 +18,6 @@
 
 
 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Required(ErrorMessage = "Vui lòng nhập ngày hết hạn trước khi thêm")]
         [Column(TypeName = "date")]
         public DateTime expired { get; set; }
