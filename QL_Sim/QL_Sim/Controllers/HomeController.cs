@@ -35,10 +35,10 @@ namespace QL_Sim.Controllers
             return RedirectToAction("index");
         }
 
-        public ActionResult edit(int ok)
+        public ActionResult edit(int id)
         {
 
-            return View(db.SimSo.SingleOrDefault(t => t.id.Equals(ok)));
+            return View(db.SimSo.SingleOrDefault(t => t.id.Equals(id)));
         }
         [HttpPost]
         public ActionResult edit(SimSo ss)

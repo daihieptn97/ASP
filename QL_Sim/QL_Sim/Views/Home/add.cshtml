@@ -13,21 +13,21 @@
     {
         @Html.HiddenFor(model => model.id)
         <div class="form-group ">
-            @Html.Label("Số ", new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.so, new { htmlAttributes = new { @class = "form-control col-md-8" } })
+            @Html.Label("Số ", new { @class = "control-label col-md-3" })
+            @Html.EditorFor(model => model.so, new { htmlAttributes = new { @class = " form-control-u col-md-6" } })
 
         </div>
         <div class="form-group">
-            @Html.Label("Giá ", new { @class = "control-label col-sm-2" })
-            @Html.EditorFor(model => model.gia, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.Label("Giá ", new { @class = "control-label col-sm-3" })
+            @Html.EditorFor(model => model.gia, new { htmlAttributes = new { @class = "form-control-u col-md-6" } })
 
         </div>
         <div class="form-group">
-            @Html.Label("ngày nhập ", new { @class = "control-label col-sm-2" })
-            @Html.EditorFor(model => model.ngaynhap, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+            @Html.Label("ngày nhập ", new { @class = "control-label col-sm-3" })
+            @Html.EditorFor(model => model.ngaynhap, new { htmlAttributes = new { @class = "form-control-u col-md-6", @readonly = "readonly", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-3 col-sm-10">
                 <button type="submit" class="btn btn-default ">Sửa</button>
                 @Html.ActionLink("Quay lại", "index", "Home", new { @class = "btn btn-danger" })
             </div>
