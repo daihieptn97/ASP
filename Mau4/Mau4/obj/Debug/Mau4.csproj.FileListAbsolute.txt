@@ -1,0 +1,2 @@
+D:\a _ Lap Trinh\ASP\ASP\Mau4\Mau4\obj\Debug\Mau4.csprojAssemblyReference.cache
+D:\a _ Lap Trinh\ASP\ASP\Mau4\Mau4\obj\Debug\Mau4.csproj.CoreCompileInputs.cache

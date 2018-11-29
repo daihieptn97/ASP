@@ -38,7 +38,6 @@ namespace QLBH.Controllers
         public ActionResult add(HangHoa hang)
         {
 
-
             if (ModelState.IsValid == true)
             {
                 db.hanghoa.Add(hang);

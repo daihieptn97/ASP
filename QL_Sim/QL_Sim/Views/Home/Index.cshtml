@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <h2>Danh sách sim số đẹp</h2>
+    <p>
+        <div class="row">
+            <div class="col-md-9">
+                @Html.ActionLink("Thêm sim", "add", "Home", new { @class = "btn btn-success" })
+            </div>
+            <div class="col-md-3 ">
+                @using (Html.BeginForm("index", "Home", FormMethod.Get))
+                {
+                    <div class="">
+                        @Html.TextBox("search", null, new { @class = "control-label" })
+                        <button type="submit" class=" ">tìm</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Số</th>
+                <th>Giá</th>
+                <th>Ngày</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>@r.id</td>
+                    <td>@r.so</td>
+                    <td>@r.gia</td>
+                    <td>@r.ngaynhap</td>
+                    <td>
+                        @Html.ActionLink("Sửa", "edit", "Home", new { r.id }, null) |
+                        @Html.ActionLink("Xóa", "delete", "Home", new { r.id }, new { onclick = "return confirm('Ban co muon xoa khong ?')" }) |
+                        @Html.ActionLink("Chi tiết", "detail", "Home", new { r.id }, null)
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

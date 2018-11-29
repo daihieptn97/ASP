@@ -17,7 +17,8 @@
 
 
                 <dd>
-                    @Html.HiddenFor(model => model.id)
+                    @* @Html.HiddenFor(model => model.id)*@
+                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @readonly = "readonly" } })
                 </dd>
                 <br />
 
